@@ -121,14 +121,13 @@ int borrarVivienda(Vivienda *list, int tam, int idVivi) {
 	return retorno;
 }
 
-int ordenarViviendas(Vivienda *list, int tam, int ordenar) {
+int ordenarViviendas(Vivienda *list, int tam) {
 
 	Vivienda auxiliar;
 	int retorno = -1;
 
 	if (list != NULL) {
 		if (tam >= 0) {
-			if (ordenar == 1) {
 				for (int i = 0; i < tam; i++) {
 					for (int j = i + 1; j < tam - 1; j++) {
 						if (strcmp(list[i].calle, list[j].calle) > 0) {
@@ -166,18 +165,44 @@ int ordenarViviendas(Vivienda *list, int tam, int ordenar) {
 				}
 			}
 			retorno = 0;
-		}
 	}
 
 	return retorno;
 }
 
-int mostrarVivienda(Vivienda *list, int tam) {
+int mostrarVivienda(Vivienda *list, int tam, Censista *listCen) {
 
 	printf("\nListado de Viviendas: \n\n");
 
 	for (int i = 0; i < tam; i++) {
 		if (list[i].isEmpty != -1) {
+			if (list[i].legajoCensista == 100) {
+				printf("%d | ", listCen[0].legajoCensista);
+				printf(listCen[0].nombre);
+				printf(" | ");
+				printf("%d ", listCen[0].edad);
+				printf(" | ");
+				printf(listCen[0].telefono);
+				printf("\n");
+			}
+			if  (list[i].legajoCensista == 101){
+				printf("%d | ", listCen[1].legajoCensista);
+				printf(listCen[1].nombre);
+				printf(" | ");
+				printf("%d ", listCen[1].edad);
+				printf(" | ");
+				printf(listCen[1].telefono);
+				printf("\n");
+			}
+			if (list[i].legajoCensista == 102){
+				printf("%d | ", listCen[2].legajoCensista);
+				printf(listCen[2].nombre);
+				printf(" | ");
+				printf("%d ", listCen[2].edad);
+				printf(" | ");
+				printf(listCen[2].telefono);
+				printf("\n");
+			}
 			printf("%d | ", list[i].idVivienda);
 			printf(list[i].calle);
 			printf(" | ");
@@ -185,12 +210,27 @@ int mostrarVivienda(Vivienda *list, int tam) {
 			printf(" | ");
 			printf("%d ",list[i].cantidadHabitaciones);
 			printf(" | ");
-			printf("%d ",list[i].tipoVivienda);
-			printf(" | ");
-			printf("%d ",list[i].legajoCensista);
+			if (list[i].tipoVivienda == 1) {
+				printf("Casa | ");
+			} else {
+				if (list[i].tipoVivienda == 2) {
+					printf("Departamento | ");
+				} else {
+					if (list[i].tipoVivienda == 3){
+						printf("Casilla |");
+					}else {
+						printf("Rancho |");
+					}
+				}
+			}
+			printf("%d ", list[i].legajoCensista);
 			printf("\n");
 		}
 	}
 	return 0;
+}
+
+int cantidadCensado(Censista *list, Vivienda *listViv, int tam){
+
 }
 

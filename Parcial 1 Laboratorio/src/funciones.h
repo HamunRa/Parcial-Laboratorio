@@ -96,13 +96,15 @@ int borrarVivienda(Vivienda *list, int tam, int idVivi);
 /// @param tam
 /// @param ordenar
 /// @return
-int ordenarViviendas(Vivienda *list, int tam , int ordenar);
+int ordenarViviendas(Vivienda *list, int tam);
 
 /// @brief muestra el listado de las viviendas ingresadas
 ///
 /// @param list
 /// @param tam
 /// @return
-int mostrarVivienda(Vivienda *list, int tam);
+int mostrarVivienda(Vivienda *list, int tam, Censista *listCen);
+
+int cantidadCensado(Censista *list, Vivienda *listViv, int tam);
 
 #endif /* FUNCIONES_H_ */

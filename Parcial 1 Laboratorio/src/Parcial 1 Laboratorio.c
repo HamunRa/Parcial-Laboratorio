@@ -35,12 +35,13 @@ int main(void) {
 
 //Censistas
 	int legajoCenso;
-	char nombre[50];
-	int edad;
-	char telefono[12];
 
 //Llamar estructuras
-	Censista empleados[tamCenso];
+
+
+	Censista empleados[5] = {{100, "Ana", 34, "1203-2345"},
+							{101, "Juan", 24, "4301-54678"},
+							{102, "Sol", 47, "5902-37487"}};
 	Vivienda censo[tam];
 
 //Inicializar arrays
@@ -159,35 +160,11 @@ int main(void) {
 				printf("\nFalta ingresar viviendas.\n");
 				break;
 			}
-			if (ordenarViviendas(censo, tam, 1) == 0) {
-				if (mostrarVivienda(censo, tam) != 0) {
-					printf("Lista Vacia");
-				}
-			}
+			ordenarViviendas(censo, tam);
+			mostrarVivienda(censo, tam, empleados);
 
 			break;
 		case 5:
-			legajoCenso = 100;
-			strcpy(nombre, "Ana");
-			edad = 34;
-			strcpy(telefono, "1203-2345");
-			cargaCenso(empleados, tamCenso, legajoCenso, nombre, edad,
-					telefono);
-
-			legajoCenso = 101;
-			strcpy(nombre, "Juan");
-			edad = 24;
-			strcpy(telefono, "4301-54678");
-			cargaCenso(empleados, tamCenso, legajoCenso, nombre, edad,
-					telefono);
-
-			legajoCenso = 102;
-			strcpy(nombre, "Sol");
-			edad = 47;
-			strcpy(telefono, "5902-37487");
-			cargaCenso(empleados, tamCenso, legajoCenso, nombre, edad,
-					telefono);
-
 			mostrarCensistas(empleados, tamCenso);
 			break;
 		case 6:
