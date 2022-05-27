@@ -105,6 +105,4 @@ int ordenarViviendas(Vivienda *list, int tam);
 /// @return
 int mostrarVivienda(Vivienda *list, int tam, Censista *listCen);
 
-int cantidadCensado(Censista *list, Vivienda *listViv, int tam);
-
 #endif /* FUNCIONES_H_ */

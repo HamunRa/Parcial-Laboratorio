@@ -230,33 +230,5 @@ int mostrarVivienda(Vivienda *list, int tam, Censista *listCen) {
 	return 0;
 }
 
-int cantidadCensado(Censista *list, Vivienda *listViv, int tam){
 
-	int censistaUno = 0;
-	int censistaDos = 0;
-	int censistaTres = 0;
-
-	for (int i = 0; i < tam; i++) {
-		if (list[i].legajoCensista == 100) {
-			censistaUno++;
-		} else {
-			if (list[i].legajoCensista == 101) {
-				censistaDos++;
-			} else {
-				if (list[i].legajoCensista == 102) {
-					censistaTres++;
-				}
-			}
-		}
-	}
-
-	if(censistaUno > censistaDos && censistaUno > censistaTres){
-		printf("El censista con mas viviendas censadas es Ana.");
-	}else if (censistaDos > censistaUno && censistaDos > censistaTres){
-		printf("El censista con mas viviendas censadas es Juan.");
-	}else{
-		printf("El censista con mas viviendas censadas es Sol.");
-	}
-	return 0;
-}
 
